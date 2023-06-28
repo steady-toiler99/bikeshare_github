@@ -128,29 +128,29 @@ def time_stats(df,city,month,day):
     print('Calculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
     
-    new_df = df
+    time_df = df
 
 # # Create Hour Columns
-    new_df['Hour'] = new_df['Start Time'].dt.hour
+    time_df['Hour'] = time_df['Start Time'].dt.hour
     
 # State User Selections     
     print('You are looking at data for:\nMonth(s): {}\nOn Day(s): {}\nIn: {}.\n'.format(month.title(),day.title(),city.title()))
 
 # # Find Most Popular Month and its Count
     if month == 'all':
-        popular_month = new_df['month'].mode()[0]
-        month_counts = new_df['month'].value_counts()[popular_month]
+        popular_month = time_df['month'].mode()[0]
+        month_counts = time_df['month'].value_counts()[popular_month]
         print('The most popular month is {} with a count of {}.\n'.format(popular_month,month_counts))
 
 # # Find Most Popular Day and its Count
     if day == 'all':
-        popular_day = new_df['day_of_week'].mode()[0]
-        day_counts = new_df['day_of_week'].value_counts()[popular_day]
+        popular_day = time_df['day_of_week'].mode()[0]
+        day_counts = time_df['day_of_week'].value_counts()[popular_day]
         print('The most popular day of the week is {} with a count of {}.\n'.format(popular_day,day_counts))
     
 # # Find Most Popular Hour and its Count
-    popular_hour = new_df['Hour'].mode()[0]
-    hour_counts = new_df['Hour'].value_counts()[popular_hour]
+    popular_hour = time_df['Hour'].mode()[0]
+    hour_counts = time_df['Hour'].value_counts()[popular_hour]
     print('The most popular hour of the day is {} with a count of {}.\n'.format(popular_hour,hour_counts))
 
     print("This took %s seconds." % (time.time() - start_time))
