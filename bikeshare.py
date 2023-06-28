@@ -271,10 +271,13 @@ def user_stats(df,city,month,day):
     print('You are looking at data for:\nMonth(s): {}\nOn Day(s): {}\nIn: {}.\n'.format(month.title(),day.title(),city.title()))
 
 # User Type Count
-    user_count = userstats_df['User Type'].fillna('Unknown').value_counts()
-    print('Trips were made up of the following users:')
-    for item, count in user_count.items():
-        print('{}: {}'.format(item,count))
+    if 'User Type' not in userstats_df.columns:
+        print('\nNo User Type data is available.')
+    else:
+        user_count = userstats_df['User Type'].fillna('Unknown').value_counts()
+        print('Trips were made up of the following users:')
+        for item, count in user_count.items():
+            print('{}: {}'.format(item,count))
     
 # Gender Count
     if 'Gender' not in userstats_df.columns:
