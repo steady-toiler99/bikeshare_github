@@ -250,7 +250,8 @@ def trip_duration_stats(df,city,month,day):
 def user_stats(df,city,month,day):
     
     """
-    From the data selected in the load_data function calculates statistics on users including the user type, gender and their year of birth
+    From the data selected in the load_data function calculates statistics on users including the user type, gender and their year of birth.
+    Where no gender or birth year data is present in the underlying data source no statistics will be returned
 
     Args:
         df -  Pandas DataFrame containing city data filtered by month and day
