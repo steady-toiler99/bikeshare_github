@@ -15,8 +15,8 @@ Selected User Data
 
 
 ### Files used
-Include the files used
+Files provided include a bikeshare.py containing the python code.
+Raw data files not provided.
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Credit to our teaching team and resources for helping us with the project.
