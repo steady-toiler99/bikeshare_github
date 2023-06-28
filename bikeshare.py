@@ -194,10 +194,10 @@ def station_stats(df,city,month,day):
 # Find Most Trip - Start & Finish Location and count
     grouped_trips = station_df.groupby(['Start Station','End Station']).size().reset_index(name='Trip Count')
     sorted_trips = grouped_trips.sort_values('Trip Count', ascending=False)
-    popular_trip = sorted_trips.iloc[0]
-    start_popular = popular_trip['Start Station']
-    end_popular = popular_trip['End Station']
-    count_popular = popular_trip['Trip Count']
+    most_popular_trip = sorted_trips.iloc[0]
+    start_popular = most_popular_trip['Start Station']
+    end_popular = most_popular_trip['End Station']
+    count_popular = most_popular_trip['Trip Count']
     print('The most common trip started at {} and finished at {} with a count of {}.\n'.format(start_popular,end_popular,count_popular))
 
     print("This took %s seconds." % (time.time() - start_time))
