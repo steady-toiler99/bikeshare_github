@@ -112,7 +112,8 @@ def load_data(city, month, day):
 
 def time_stats(df,city,month,day):        
     """
-    From the data selected in the load_data function calculates the most popular months, days and hours of travel for the specified location
+    From the data selected in the load_data function calculates the most popular months, days and hours of travel for the specified location.
+    Where a specific month or day of the week is specified by a user no data will be returned for the relevent field.
 
     Args:
         df -  Pandas DataFrame containing city data filtered by month and day
